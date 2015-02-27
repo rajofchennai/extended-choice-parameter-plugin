@@ -356,12 +356,8 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 				Iterator<?> it = jsonValues.iterator();
 				for(int i = 1; it.hasNext(); i++) {
 					String nextValue = it.next().toString();
-					if(i % valuesBetweenLevels == 0) {
-						if(strValue.length() > 0) {
-							strValue += getMultiSelectDelimiter();
-						}
-						strValue += nextValue;
-					}
+					strValue += getMultiSelectDelimiter();
+					strValue += nextValue;
 				}
 			}
 			else {
@@ -638,7 +634,7 @@ public class ExtendedChoiceParameterDefinition extends ParameterDefinition {
 		return dropdownIds;
 
 		/* dropdownIds is of a form like this:
-		return name + " dropdown MultiLevelMultiSelect 0," 
+		return name + " dropdown MultiLevelMultiSelect 0,"
 				   // next select the source of the genome -- each genome gets a seperate dropdown id:"
 				 + name + " dropdown MultiLevelMultiSelect 0 HG18,dropdown MultiLevelMultiSelect 0 ZZ23,"
 				 // next select the cell type of the source -- each source gets a seperate dropdown id
